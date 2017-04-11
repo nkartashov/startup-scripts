@@ -1,14 +1,19 @@
 # Moving around
-WORK_DIR="~/work"
-alias cdcpp="cd $WORK_DIR/cpp"
-alias cdunix="cd $WORK_DIR/unix"
-alias cdja="cd $WORK_DIR/java"
-alias cdw="cd $WORK_DIR"
-alias cdpy="cd $WORK_DIR/python"
-alias cdscm="cd $WORK_DIR/sicp"
-alias cdag="cd $WORK_DIR/agda"
-alias cdhs="cd $WORK_DIR/haskell"
-alias cdeu="cd $WORK_DIR/euler"
+if [ -z "$WORK_PC" ]
+then
+  WORK_DIR="~/work"
+  alias cdcpp="cd $WORK_DIR/cpp"
+  alias cdunix="cd $WORK_DIR/unix"
+  alias cdja="cd $WORK_DIR/java"
+  alias cdw="cd $WORK_DIR"
+  alias cdpy="cd $WORK_DIR/python"
+  alias cdscm="cd $WORK_DIR/sicp"
+  alias cdag="cd $WORK_DIR/agda"
+  alias cdhs="cd $WORK_DIR/haskell"
+  alias cdeu="cd $WORK_DIR/euler"
+else
+  :;
+fi
 
 # shortcuts
 alias cdu="cd .."

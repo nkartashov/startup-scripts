@@ -1,5 +1,5 @@
 #!/bin/bash
 
-git clone git@github.com:nkartashov/startup-scripts.git ~/
+git clone git@github.com:nkartashov/startup-scripts.git ~/startup-scripts
 RESULT_FOLDER=~/startup-scripts
 ln -s $RESULT_FOLDER/bashrc ~/.bashrc

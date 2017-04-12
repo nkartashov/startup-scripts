@@ -4,3 +4,5 @@ source "$START_SCRIPTS"/alias.sh
 source "$START_SCRIPTS"/path.sh
 source "$START_SCRIPTS"/vars.sh
 source "$START_SCRIPTS"/prompt.sh
+source "$START_SCRIPTS"/title.sh
+source "$START_SCRIPTS"/history.sh

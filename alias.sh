@@ -60,3 +60,10 @@ function gc {
 function gd {
   git diff "$@"
 }
+
+# Key utils
+alias new_ssh_key='ssh-keygen -t rsa -b 4096 -C snailandmail@gmail.com'
+function add_key {
+  ssh-add -K "$@"
+}
+

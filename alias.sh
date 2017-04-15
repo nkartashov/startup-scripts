@@ -63,7 +63,10 @@ function gd {
 
 # Key utils
 alias new_ssh_key='ssh-keygen -t rsa -b 4096 -C snailandmail@gmail.com'
-function add_key {
+function add_ssh_key {
   ssh-add -K "$@"
+}
+function ssh_fingeprint {
+  ssh-keygen -lf "$@"
 }
 

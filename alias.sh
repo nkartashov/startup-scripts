@@ -70,3 +70,6 @@ function ssh_fingeprint {
   ssh-keygen -lf "$@"
 }
 
+function dus {
+  du -sch .[!.]* * | gsort -rh
+}

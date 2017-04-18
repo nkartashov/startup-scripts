@@ -60,3 +60,12 @@ function gc {
 function gd {
   git diff "$@"
 }
+
+# Short Ruby commands
+function bx {
+  bundler exec $@
+}
+
+function bxr {
+  bundler exec rspec $@
+}

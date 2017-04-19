@@ -92,3 +92,5 @@ function git_to_ssh {
   echo $CURRENT_URL '->' $FULL_GIT_URL   
   git remote set-url origin $FULL_GIT_URL
 }
+
+alias db='mysql --user=root --password=password --database=cube_development'

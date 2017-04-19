@@ -60,6 +60,12 @@ function gc {
 function gd {
   git diff "$@"
 }
+function gch {
+  git checkout "$@"
+}
+function gf {
+  git fetch "$@"
+}
 
 # Short Ruby commands
 function bx {

@@ -42,30 +42,6 @@ alias vus='vu; vs'
 alias ipn='ipython notebook --profile solarized'
 alias jp='jupyter notebook'
 
-function gpl {
-  git pull "$@"
-}
-function gps {
-  git push "$@"
-}
-function ga {
-  git add "$@"
-}
-function gs {
-  git status "$@"
-}
-function gc {
-	git commit "$@"
-}
-function gd {
-  git diff "$@"
-}
-function gch {
-  git checkout "$@"
-}
-function gf {
-  git fetch "$@"
-}
 
 # Short Ruby commands
 function bx {

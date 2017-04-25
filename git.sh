@@ -25,3 +25,9 @@ function gf {
 function gl {
   git log "$@"
 }
+function gsh {
+  git show "$@"
+}
+function gst {
+  git stash "$@"
+}

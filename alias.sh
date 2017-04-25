@@ -76,3 +76,6 @@ function git_to_ssh {
 }
 
 alias db='mysql --user=root --password=password --database=cube_development'
+
+#TEMPORARY
+alias cdold='cd /Volumes/Macintosh\ HD/Users/nikita_kartashov'

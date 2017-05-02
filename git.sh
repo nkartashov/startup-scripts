@@ -31,3 +31,7 @@ function gsh {
 function gst {
   git stash "$@"
 }
+
+function gbl {
+  git blame "$@"
+}

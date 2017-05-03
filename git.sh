@@ -39,3 +39,7 @@ function gbl {
 function gcp {
   git cherry-pick "$@"
 }
+
+function grb {
+  git rebase "$@"
+}

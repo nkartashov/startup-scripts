@@ -35,3 +35,7 @@ function gst {
 function gbl {
   git blame "$@"
 }
+
+function gcp {
+  git cherry-pick "$@"
+}

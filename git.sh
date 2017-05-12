@@ -41,5 +41,5 @@ function grb {
   git rebase "$@"
 }
 function gbr {
-  git rebase "$@"
+  git branch "$@"
 }

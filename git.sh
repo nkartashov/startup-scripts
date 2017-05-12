@@ -31,15 +31,15 @@ function gsh {
 function gst {
   git stash "$@"
 }
-
 function gbl {
   git blame "$@"
 }
-
 function gcp {
   git cherry-pick "$@"
 }
-
 function grb {
+  git rebase "$@"
+}
+function gbr {
   git rebase "$@"
 }

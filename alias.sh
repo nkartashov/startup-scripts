@@ -20,13 +20,18 @@ alias cdu="cd .."
 alias g47="gcc-4.7"
 alias py="pypy"
 alias py3="python3"
-alias v="vim"
 alias c="clear"
 alias cm="c; make"
-alias vrc="v ~/.vimrc"
-alias vpr="v ~/.bash_profile"
 alias la="ls -lah"
 alias ll="ls -lh"
+
+# Vim
+alias v="vim"
+alias vrc="v ~/.vimrc"
+alias vpr="v ~/.bash_profile"
+function vn {
+  vim -u NONE "$@"
+}
 
 
 # Vagrant

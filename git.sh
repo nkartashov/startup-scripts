@@ -43,3 +43,12 @@ function grb {
 function gbr {
   git branch "$@"
 }
+function gmr {
+  git merge "$@"
+}
+function grss {
+  git reset --soft "$@"
+}
+function list_conflicted {
+  git diff --name-only --diff-filter=U
+}

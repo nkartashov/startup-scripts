@@ -52,3 +52,8 @@ function grss {
 function list_conflicted {
   git diff --name-only --diff-filter=U
 }
+
+# Delete old branches where are already merged and keep master/develop/staging
+alias gbpurge='git branch --merged | grep -Ev "(\*|master|develop|staging)" | xargs -n 1 git branch -d'
+
+alias wip='git commit -m "wip"'

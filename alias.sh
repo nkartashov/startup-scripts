@@ -85,3 +85,5 @@ alias tdb='mysql --user=root --password=password --database=cube_test'
 
 #TEMPORARY
 alias cdold='cd /Volumes/Macintosh\ HD/Users/nikita_kartashov'
+
+alias rj='mvn clean install -DskipTests && rake workers:install'

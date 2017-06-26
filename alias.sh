@@ -16,8 +16,6 @@ else
 fi
 
 # shortcuts
-alias cdu="cd .."
-alias g47="gcc-4.7"
 alias py="pypy"
 alias py3="python3"
 alias c="clear"
@@ -80,10 +78,11 @@ function git_to_ssh {
   git remote set-url origin $FULL_GIT_URL
 }
 
-alias db='mysql --user=root --password=password --database=cube_development'
+alias db='mysql --user=root --password=password --database=tenant1'
 alias tdb='mysql --user=root --password=password --database=cube_test'
 
-#TEMPORARY
+# TEMPORARY
 alias cdold='cd /Volumes/Macintosh\ HD/Users/nikita_kartashov'
+alias w='cd ~/code/cube'
 
 alias rj='mvn clean install -DskipTests && rake workers:install'

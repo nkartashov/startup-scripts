@@ -57,3 +57,5 @@ function list_conflicted {
 alias gbpurge='git branch --merged | grep -Ev "(\*|master|develop|staging)" | xargs -n 1 git branch -d'
 
 alias wip='git commit -m "wip"'
+
+alias uncommit_last='git reset HEAD~1 --soft'

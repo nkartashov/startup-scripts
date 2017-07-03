@@ -5,6 +5,7 @@ source "$START_SCRIPTS"/path.sh
 # Path always goes first
 
 source "$START_SCRIPTS"/alias.sh
+source "$START_SCRIPTS"/duco.sh
 source "$START_SCRIPTS"/git.sh
 source "$START_SCRIPTS"/vars.sh
 source "$START_SCRIPTS"/prompt.sh

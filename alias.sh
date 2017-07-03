@@ -78,11 +78,5 @@ function git_to_ssh {
   git remote set-url origin $FULL_GIT_URL
 }
 
-alias db='mysql --user=root --password=password --database=tenant1'
-alias tdb='mysql --user=root --password=password --database=cube_test'
-
 # TEMPORARY
 alias cdold='cd /Volumes/Macintosh\ HD/Users/nikita_kartashov'
-alias w='cd ~/code/cube'
-
-alias rj='mvn clean install -DskipTests && rake workers:install'

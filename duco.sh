@@ -1,0 +1,5 @@
+alias w='cd ~/code/cube'
+alias rj='mvn clean install -DskipTests && rake workers:install'
+alias db='mysql --user=root --password=password --database=tenant1'
+alias tdb='mysql --user=root --password=password --database=cube_test'
+alias f='rake apartment:drop && rake apartment:create && rake db:migrate && rake db:seed'

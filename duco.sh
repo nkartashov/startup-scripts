@@ -1,4 +1,4 @@
-alias w='cd ~/code/cube'
+alias w='cd ~/code/cube && rake ramdisk'
 alias rj='mvn clean install -DskipTests && rake workers:install'
 alias db='mysql --user=root --password=password --database=tenant1'
 alias tdb='mysql --user=root --password=password --database=cube_test'

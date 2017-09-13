@@ -68,15 +68,5 @@ function dus {
   du -sch .[!.]* * | gsort -rh
 }
 
-function git_to_ssh {
-  local CURRENT_URL=$(git remote -v | head -1 | cut -f2 | cut -d' ' -f1)
-  local HTTP_PREFIX='https://github.com/'
-  local SSH_PREFIX='git@github.com:'
-  local REPO=${CURRENT_URL#$HTTP_PREFIX}
-  local FULL_GIT_URL="$SSH_PREFIX$REPO"
-  echo $CURRENT_URL '->' $FULL_GIT_URL   
-  git remote set-url origin $FULL_GIT_URL
-}
-
 # TEMPORARY
 alias cdold='cd /Volumes/Macintosh\ HD/Users/nikita_kartashov'

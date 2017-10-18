@@ -68,5 +68,12 @@ function dus {
   du -sch .[!.]* * | gsort -rh
 }
 
+function fd {
+  rake db:drop &&
+  rake db:create &&
+  rake db:migrate &&
+  rake db:seed
+}
+
 # TEMPORARY
 alias cdold='cd /Volumes/Macintosh\ HD/Users/nikita_kartashov'

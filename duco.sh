@@ -9,5 +9,7 @@ function f {
   rake db:trdb
 }
 alias w='cd ~/code/cube && rake ramdisk && f'
-alias atlas_bxr='TEST_EN=mt-atlas bxr'
+function atlas_bxr() {
+  TEST_EN=mt-atlas bxr "$@"
+}
 alias cu='cd ~/code/cube'

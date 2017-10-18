@@ -29,7 +29,7 @@ function gsh {
   git show "$@"
 }
 function gst {
-  git stash "$@"
+  git stash -u "$@"
 }
 function gbl {
   git blame "$@"

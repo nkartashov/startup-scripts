@@ -46,6 +46,9 @@ function gbr {
 function gmr {
   git merge "$@"
 }
+function grs {
+  git reset "$@"
+}
 function grss {
   git reset --soft "$@"
 }

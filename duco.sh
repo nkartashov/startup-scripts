@@ -9,7 +9,7 @@ if [ "$BASH_SCRIPTS_ENV" == "DUCO" ]; then
     rake db:seed &&
     rake db:trdb
   }
-  alias w='cd ~/code/cube && rake ramdisk && f'
+  alias w='cd ~/code/cube && f'
   function atlas_bxr() {
     TEST_EN=mt-atlas bxr "$@"
   }

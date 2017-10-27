@@ -9,9 +9,17 @@ if [ "$BASH_SCRIPTS_ENV" == "DUCO" ]; then
     rake db:seed &&
     rake db:trdb
   }
-  alias w='cd ~/code/cube && f'
+  function w() {
+    cu && f
+  }
   function atlas_bxr() {
     TEST_EN=mt-atlas bxr "$@"
   }
-  alias cu='cd ~/code/cube'
+  function cu() {
+    cd ~/code/cube
+  }
+  function perc() {
+    cu &&
+    find . -name database.yml -or -name reference.conf -or -name application.conf | xargs sed -i 's/host = localhost/host = "127.0.0.1"/; s/host: localhost/host: 127.0.0.1/'
+  }
 fi

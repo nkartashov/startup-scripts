@@ -1,5 +1,9 @@
 echo "Sourcing .bashrc"
 START_SCRIPTS=~/startup-scripts
+# But env goes even firster!
+source "$START_SCRIPTS"/env.sh
+# But env goes even firster!
+
 # Path always goes first
 source "$START_SCRIPTS"/path.sh
 # Path always goes first

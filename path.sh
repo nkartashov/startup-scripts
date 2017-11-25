@@ -12,6 +12,7 @@ then
   includeDirInPath "/usr/local/bin"
   includeDirInPath "$HOME/.local/bin"
   includeDirInPath "$HOME/anaconda3/bin"
+  includeDirInPath "/usr/local/anaconda3/bin"
   includeDirInPath "/usr/local/opt/icu4c/bin"
   includeDirInPath "/usr/local/opt/icu4c/sbin"
 else

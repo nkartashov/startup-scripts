@@ -11,10 +11,6 @@ if [ "$BASH_SCRIPTS_ENV" == "DUCO" ]; then
   }
   function w() {
     cu &&
-    bloody_percona &&
-    rake db:create
-    cu &&
-    rake db:create &&
     f
   }
   function atlas_bxr() {

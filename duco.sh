@@ -11,6 +11,7 @@ if [ "$BASH_SCRIPTS_ENV" == "DUCO" ]; then
   }
   function w() {
     cu &&
+    rake ramdisk &&
     f
   }
   function atlas_bxr() {

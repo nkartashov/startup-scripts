@@ -14,9 +14,6 @@ if [ "$BASH_SCRIPTS_ENV" == "DUCO" ]; then
     rake ramdisk &&
     f
   }
-  function atlas_bxr() {
-    TEST_EN=mt-atlas bxr "$@"
-  }
   function cu() {
     cd ~/code/cube
   }

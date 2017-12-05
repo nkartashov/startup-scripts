@@ -9,29 +9,20 @@ if [ "$BASH_SCRIPTS_ENV" == "DUCO" ]; then
     rake db:seed &&
     rake db:trdb
   }
+
   function w() {
     cu &&
     rake ramdisk &&
     f
   }
+
   function cu() {
     cd ~/code/cube
   }
+
   function perc_paths() {
     cu &&
     find . -name database.yml -or -name reference.conf -or -name application.conf | xargs sed -i 's/host = localhost/host = "127.0.0.1"/; s/host: localhost/host: 127.0.0.1/'
-  }
-
-  function perc_run() {
-    docker run --rm --name percona56 --tmpfs "/var/lib/mysql:rw,size=1024M" -p 3306:3306 -e MYSQL_ROOT_PASSWORD=password -d percona:5.6
-  }
-
-  function bloody_percona() {
-    sudo service landscape-client stop
-    sudo service mysql stop
-
-    # Start the container: This will fail if it's already running
-    docker run --rm --name percona56 --tmpfs "/var/lib/mysql:rw,size=1024M" -p 3306:3306 -e MYSQL_ROOT_PASSWORD=password -d percona:5.6
   }
 
   function rebuild_exporter() {

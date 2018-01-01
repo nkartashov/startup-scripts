@@ -16,6 +16,9 @@ function gc {
 function gd {
   git diff "$@"
 }
+function gdc {
+  git diff --cached "$@"
+}
 function gch {
   git checkout "$@"
 }

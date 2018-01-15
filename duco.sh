@@ -11,7 +11,7 @@ if [ "$BASH_SCRIPTS_ENV" == "DUCO" ]; then
     local_rebuild_java &&
     cd "$OLD_PWD"
   }
-  alias db='mysql -uroot -ppassword --protocol=tcp tenant1'
+  alias db='mysql -uroot -ppassword --protocol=tcp local-production'
   alias tdb='mysql -uroot -ppassword --protocol=tcp cube_test'
   function f {
     rake apartment:drop &&

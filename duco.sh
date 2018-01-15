@@ -1,5 +1,12 @@
 if [ "$BASH_SCRIPTS_ENV" == "DUCO" ]; then
-  alias rj='mvn clean install -DskipTests && rake workers:install'
+  function rj() {
+    local OLD_PWD="$PWD"
+    cu &&
+    cd src/java &&
+    mvn clean install -DskipTests &&
+    rake workers:install &&
+    cd "$OLD_PWD"
+  }
   alias db='mysql -uroot -ppassword --protocol=tcp tenant1'
   alias tdb='mysql -uroot -ppassword --protocol=tcp cube_test'
   function f {

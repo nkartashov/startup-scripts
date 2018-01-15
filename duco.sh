@@ -19,8 +19,9 @@ if [ "$BASH_SCRIPTS_ENV" == "DUCO" ]; then
 
   function w() {
     cu &&
-    rake ramdisk &&
-    f
+    rake ramdisk && echo 'Running MySQL on ramdisk'
+    f &&
+    rj
   }
 
   function cu() {

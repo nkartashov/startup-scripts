@@ -55,6 +55,11 @@ function grs {
 function grss {
   git reset --soft "$@"
 }
+
+function ghist {
+  git log --pretty=format:"%h %ad | %s%d [%an]" --graph --date=short "$@"
+}
+
 function list_conflicted {
   git diff --name-only --diff-filter=U
 }

@@ -1,10 +1,14 @@
 if [ "$BASH_SCRIPTS_ENV" == "DUCO" ]; then
+  function local_rebuild_java() {
+    mvn clean install -DskipTests &&
+    rake workers:install
+  }
+
   function rj() {
     local OLD_PWD="$PWD"
     cu &&
     cd src/java &&
-    mvn clean install -DskipTests &&
-    rake workers:install &&
+    local_rebuild_java &&
     cd "$OLD_PWD"
   }
   alias db='mysql -uroot -ppassword --protocol=tcp tenant1'
@@ -34,12 +38,13 @@ if [ "$BASH_SCRIPTS_ENV" == "DUCO" ]; then
   }
 
   function rebuild_exporter() {
+    local OLD_PWD="$PWD"
     cu &&
     cd src/java &&
     cd config-processing &&
-    rj &&
+    local_rebuild_java &&
     cd ../full-tenant-export &&
-    rj &&
-    cd ..
+    local_rebuild_java &&
+    cd "$OLD_PWD"
   }
 fi

@@ -32,7 +32,10 @@ function gsh {
   git show "$@"
 }
 function gst {
-  git stash "$@" -u
+  git stash -u
+}
+function gsta {
+  git stash apply "$@"
 }
 function gbl {
   git blame "$@"

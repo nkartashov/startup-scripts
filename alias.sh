@@ -55,6 +55,10 @@ function bxr {
   bundler exec rspec $@
 }
 
+function brake {
+  bundler exec rake $@
+}
+
 # Key utils
 alias new_ssh_key='ssh-keygen -t rsa -b 4096 -C snailandmail@gmail.com'
 function add_ssh_key {

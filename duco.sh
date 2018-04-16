@@ -32,6 +32,10 @@ if [ "$BASH_SCRIPTS_ENV" == "DUCO" ]; then
     cd ~/code/cube
   }
 
+  function ci() {
+    cd ~/code/interview
+  }
+
   function perc_paths() {
     cu &&
     find . -name database.yml -or -name reference.conf -or -name application.conf | xargs sed -i 's/host = localhost/host = "127.0.0.1"/; s/host: localhost/host: 127.0.0.1/'

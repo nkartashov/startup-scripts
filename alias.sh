@@ -75,5 +75,9 @@ function fd {
   rake db:seed
 }
 
+function les {
+  less -n -r "$@"
+}
+
 # TEMPORARY
 alias cdold='cd /Volumes/Macintosh\ HD/Users/nikita_kartashov'

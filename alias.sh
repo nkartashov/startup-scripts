@@ -15,6 +15,9 @@ else
   :;
 fi
 
+alias cdstart="cd ~/startup-scripts"
+alias cdvim="cd ~/vim-scripts"
+
 # shortcuts
 alias py="pypy"
 alias py3="python3"

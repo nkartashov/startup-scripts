@@ -10,6 +10,9 @@ function ga {
 function gs {
   git status "$@"
 }
+function g {
+  gs "$@"
+}
 function gc {
 	git commit "$@"
 }

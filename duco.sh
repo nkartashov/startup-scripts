@@ -14,6 +14,8 @@ if [ "$BASH_SCRIPTS_ENV" == "DUCO" ]; then
   alias db='mysql -uroot -ppassword --protocol=tcp local-production'
   alias tdb='mysql -uroot -ppassword --protocol=tcp cube_test'
   function f {
+    rake db:drop &&
+    rake db:create &&
     rake apartment:drop &&
     rake apartment:create &&
     rake db:migrate &&

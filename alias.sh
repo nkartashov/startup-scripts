@@ -27,9 +27,11 @@ alias la="ls -lah"
 alias ll="ls -lh"
 
 # Vim
-alias v="vim"
-alias vrc="v ~/.vimrc"
-alias vpr="v ~/.bash_profile"
+function v {
+  vim "$@"
+}
+alias vrc="vim ~/.vimrc"
+alias vpr="vim ~/.bash_profile"
 function vn {
   vim -u NONE "$@"
 }

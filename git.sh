@@ -4,6 +4,9 @@ function gpl {
 function gps {
   git push "$@"
 }
+function gpsu {
+  git push -u "$@"
+}
 function ga {
   git add "$@"
 }

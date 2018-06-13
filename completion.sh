@@ -19,4 +19,4 @@ if [ -f /etc/bash_completion ]; then
   . /etc/bash_completion
 fi
 
-source "$START_SCRIPTS"/git-completion.sh
+include "$START_SCRIPTS"/git-completion.sh

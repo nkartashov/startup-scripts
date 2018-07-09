@@ -30,8 +30,11 @@ if [ "$BASH_SCRIPTS_ENV" == "DUCO" ]; then
     rj
   }
 
+  CUBE_DIR=~/code/cube
+  JAVA_DIR=$CUBE_DIR/src/java
+
   function cu() {
-    cd ~/code/cube
+    cd "$CUBE_DIR"
   }
 
   function ci() {
@@ -52,5 +55,11 @@ if [ "$BASH_SCRIPTS_ENV" == "DUCO" ]; then
     cd ../full-tenant-export &&
     local_rebuild_java &&
     cd "$OLD_PWD"
+  }
+
+  function pdf_export() {
+    local EXPORTER=$(ls $JAVA_DIR/full-tenant-export/target/full-tenant-export-*-SNAPSHOT.jar)
+    rm -rf ~/foo/* &&
+    java -jar "$EXPORTER" -t local-production -d ~/foo -c ~/test_cube_conf
   }
 fi

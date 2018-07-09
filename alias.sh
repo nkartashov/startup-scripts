@@ -21,6 +21,9 @@ alias cdvim="cd ~/vim-scripts"
 # shortcuts
 alias py="pypy"
 alias py3="python3"
+function ppy() {
+  pipenv run python3 "$@"
+}
 alias c="clear"
 alias cm="c; make"
 alias la="ls -lah"

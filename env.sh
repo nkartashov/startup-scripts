@@ -6,3 +6,4 @@ if [ -e "$ENV_FILE" ]; then
 else
   export BASH_SCRIPTS_ENV="HOME"
 fi
+export EDITOR="vim"

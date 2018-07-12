@@ -29,10 +29,9 @@ function gch {
   git checkout "$@"
 }
 function fetch_rebased {
-  set -e
   BRANCH=`git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'`
-  git checkout master
-  git branch -D "$BRANCH"
+  git checkout master &&
+  git branch -D "$BRANCH" &&
   git checkout "$BRANCH"
 }
 function gf {

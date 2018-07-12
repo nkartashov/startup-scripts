@@ -5,7 +5,8 @@ function gps {
   git push "$@"
 }
 function gpsu {
-  git push -u "$@"
+  BRANCH=`git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'`
+  git push --set-upstream origin "$BRANCH" "$@"
 }
 function ga {
   git add "$@"

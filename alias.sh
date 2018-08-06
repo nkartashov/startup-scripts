@@ -68,7 +68,12 @@ function brake {
 }
 
 # Key utils
-alias new_ssh_key='ssh-keygen -t rsa -b 4096 -C snailandmail@gmail.com'
+function new_ssh_key {
+  ssh-keygen -t rsa -b 4096 -C "$@"
+}
+function new_home_ssh_key {
+  new_ssh_key snailandmail@gmail.com
+}
 function add_ssh_key {
   ssh-add -K "$@"
 }

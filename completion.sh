@@ -19,4 +19,6 @@ if [ -f /etc/bash_completion ]; then
   . /etc/bash_completion
 fi
 
+if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
+
 include "$START_SCRIPTS"/git-completion.sh

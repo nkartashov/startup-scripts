@@ -91,5 +91,9 @@ function les {
   less -n -r "$@"
 }
 
+function jpp {
+  json_pp --json_opt=canonical,pretty "$@"
+}
+
 # TEMPORARY
 alias cdold='cd /Volumes/Macintosh\ HD/Users/nikita_kartashov'

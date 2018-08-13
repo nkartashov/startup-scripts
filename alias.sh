@@ -24,6 +24,13 @@ alias py3="python3"
 function ppy() {
   pipenv run python3 "$@"
 }
+function pitr() {
+  pip install -r test_requirements.txt "$@"
+}
+function cw() {
+  cd "$@"
+  workon $(basename "$@")
+}
 alias c="clear"
 alias cm="c; make"
 alias la="ls -lah"
@@ -98,6 +105,10 @@ function les {
 
 function jpp {
   json_pp --json_opt=canonical,pretty "$@"
+}
+
+function jtb {
+  git checkout -b $(tr '[:space:]' '-' "$@")
 }
 
 # TEMPORARY

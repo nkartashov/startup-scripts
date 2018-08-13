@@ -111,5 +111,9 @@ function jtb {
   git checkout -b $(tr '[:space:]' '-' "$@")
 }
 
+function untilfail {
+  while "$@"; do :; done
+}
+
 # TEMPORARY
 alias cdold='cd /Volumes/Macintosh\ HD/Users/nikita_kartashov'

@@ -102,3 +102,8 @@ function gca {
 function gcan {
   git commit --amend --no-edit "$@"
 }
+function refetch_submodule {
+  set -e
+  git submodule sync
+  git submodule update --init
+}

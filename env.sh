@@ -7,7 +7,10 @@ else
   export BASH_SCRIPTS_ENV="HOME"
 fi
 ENV_VARIABLE_FILE=~/.env_variables
+function export_env() {
+  export $(cat "$@" | xargs)
+}
 if [ -e "$ENV_VARIABLE_FILE" ]; then
-  export $(cat "$ENV_VARIABLE_FILE" | xargs)
+  export_env "$ENV_VARIABLE_FILE"
 fi
 export EDITOR="vim"

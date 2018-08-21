@@ -31,6 +31,10 @@ function cw() {
   cd "$@"
   workon $(basename "$@")
 }
+function w() {
+  local CURRENT_DIR=$(pwd | xargs basename)
+  workon "$CURRENT_DIR"
+}
 alias c="clear"
 alias cm="c; make"
 alias la="ls -lah"

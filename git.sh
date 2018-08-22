@@ -35,6 +35,16 @@ function fetch_rebased {
   git branch -D "$BRANCH" &&
   git checkout "$BRANCH"
 }
+function checkout_master_and_run_command {
+  BRANCH=`git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'`
+  git checkout master &&
+  git pull &&
+  git checkout "$BRANCH" &&
+  git "$1" master
+}
+function gchm {
+  checkout_master_and_run_command merge
+}
 function gf {
   git fetch "$@"
 }
@@ -58,6 +68,9 @@ function gcp {
 }
 function grb {
   git rebase "$@"
+}
+function grbm {
+  checkout_master_and_run_command rebase
 }
 function gbr {
   git branch "$@"

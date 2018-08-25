@@ -6,7 +6,6 @@ then
   alias cdunix="cd $WORK_DIR/unix"
   alias cdja="cd $WORK_DIR/java"
   alias cdw="cd $WORK_DIR"
-  alias cdpy="cd $WORK_DIR/python"
   alias cdscm="cd $WORK_DIR/sicp"
   alias cdag="cd $WORK_DIR/agda"
   alias cdhs="cd $WORK_DIR/haskell"
@@ -19,22 +18,6 @@ alias cdstart="cd ~/startup-scripts"
 alias cdvim="cd ~/vim-scripts"
 
 # shortcuts
-alias py="pypy"
-alias py3="python3"
-function ppy() {
-  pipenv run python3 "$@"
-}
-function pitr() {
-  pip install -r test_requirements.txt "$@"
-}
-function cw() {
-  cd "$@"
-  workon $(basename "$@")
-}
-function w() {
-  local CURRENT_DIR=$(pwd | xargs basename)
-  workon "$CURRENT_DIR"
-}
 alias c="clear"
 alias cm="c; make"
 alias la="ls -lah"
@@ -59,11 +42,6 @@ alias vr='vagrant reload'
 alias vd='vagrant destroy'
 alias vrs='vr; vs'
 alias vus='vu; vs'
-
-# IPython launch
-alias ipn='ipython notebook --profile solarized'
-alias jp='jupyter notebook'
-
 
 # Short Ruby commands
 function bx {

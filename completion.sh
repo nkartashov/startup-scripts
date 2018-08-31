@@ -9,15 +9,18 @@ if ! shopt -oq posix; then
   fi
 fi
 
-# Completion for macOS
-if [ -f /usr/local/etc/bash_completion ]; then
-  . /usr/local/etc/bash_completion
+# macOS brew completions
+if type brew 2&>/dev/null; then
+  for completion_file in $(brew --prefix)/etc/bash_completion.d/*; do
+    include "$completion_file"
+  done
 fi
 
-# Completion for Ubuntu
-if [ -f /etc/bash_completion ]; then
-  . /etc/bash_completion
-fi
+# Ubuntu completion
+include /etc/bash_completion
+
+# Better cd with z
+include /usr/local/etc/profile.d/z.sh
 
 if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
 

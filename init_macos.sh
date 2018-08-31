@@ -1,12 +1,8 @@
 #!/bin/bash
 
-brew cask install xquartz
-HOME_STUFF="haskell-stack fdupes imagemagick"
-brew install $HOME_STUFF openvpn gcc coreutils cmake ag tldr docker-machine docker-compose lua luajit gibo fzf
-brew install vim --with-client-server --with-lua --with-luajit --with-tcl --with-python3
-ESSENTIALS="xquartz alfred day-o google-drive keepassxc anaconda iterm2 the-unarchiver java virtualbox"
-MESSENGERS="skype telegram whatsapp slack"
-MISC="tunnelbear electrum mplayerx tunnelblick beardedspice google-chrome openoffice steam torbrowser"
-brew cask install $ESSENTIALS $MESSENGERS $MISC
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+brew tap "homebrew/bundle"
+brew bundle install --path=Brewfile
+
 curl https://raw.githubusercontent.com/nkartashov/startup-scripts/master/install.sh | sh
 curl https://raw.githubusercontent.com/nkartashov/vim-scripts/master/install.sh | sh

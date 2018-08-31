@@ -1,4 +1,3 @@
-tap "homebrew/bundle"
 tap "homebrew/cask"
 tap "homebrew/cask-fonts"
 tap "homebrew/cask-versions"
@@ -58,6 +57,8 @@ brew "vim", args: ["with-client-server", "with-lua", "with-luajit", "with-python
 brew node
 # JavaScript package manager
 brew "yarn"
+# Better cd
+brew "z"
 cask "alfred"
 cask "day-o"
 cask "docker"

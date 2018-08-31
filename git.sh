@@ -42,7 +42,7 @@ function checkout_master_and_run_command {
   git checkout "$BRANCH" &&
   git "$1" master
 }
-function gchm {
+function gmm {
   checkout_master_and_run_command merge
 }
 function gf {
@@ -74,6 +74,14 @@ function grbm {
 }
 function gbr {
   git branch "$@"
+}
+function gbm {
+  git checkout master &&
+  git pull &&
+  git checkout -b "$@"
+}
+function gchm {
+  git checkout master "$@"
 }
 function gmr {
   git merge "$@"

@@ -75,6 +75,11 @@ function grbm {
 function gbr {
   git branch "$@"
 }
+function gbm {
+  git checkout master &&
+  git pull &&
+  git checkout -b "$@"
+}
 function gchm {
   git checkout master "$@"
 }

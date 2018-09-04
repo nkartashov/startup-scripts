@@ -97,9 +97,5 @@ function untilfail {
   while "$@"; do :; done
 }
 
-function dkillall {
-  docker ps -q | xargs docker kill
-}
-
 # TEMPORARY
 alias cdold='cd /Volumes/Macintosh\ HD/Users/nikita_kartashov'

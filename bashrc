@@ -7,6 +7,9 @@ function include {
     echo "$1 doesn't exist"
   fi
 }
+function command_exists {
+  type "$1" &> /dev/null ;
+}
 # But env goes even firster!
 include "$START_SCRIPTS"/env.sh
 # But env goes even firster!

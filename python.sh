@@ -12,10 +12,12 @@ function cw() {
 }
 function w() {
   local CURRENT_DIR=$(pwd | xargs basename)
-  if [ ! -f "$CURRENT_DIR"/Pipfile ]; then
+  if [ ! -f "$CURRENT_DIR"/Pipfile ] && command_exists pipenv; then
     pipenv shell
-  else
+  elif command_exists workon; then
     workon "$CURRENT_DIR"
+  else
+    echo 'Neither pipenv nor virtualenvwrapper are installed'
   fi
 }
 

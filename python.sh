@@ -8,7 +8,7 @@ function pitr() {
 }
 function cw() {
   cd "$@"
-  workon $(basename "$@")
+  w $(basename "$@")
 }
 function w() {
   local CURRENT_DIR=$(pwd | xargs basename)

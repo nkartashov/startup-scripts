@@ -97,5 +97,9 @@ function untilfail {
   while "$@"; do :; done
 }
 
+function update_brewfile {
+  brew bundle dump --global --describe --force
+}
+
 # TEMPORARY
 alias cdold='cd /Volumes/Macintosh\ HD/Users/nikita_kartashov'

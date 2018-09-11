@@ -20,6 +20,8 @@ brew "bash-completion"
 brew "bat"
 # Collection of portable C++ source libraries
 brew "boost"
+# Formatting tools for C, C++, Obj-C, Java, JavaScript, TypeScript
+brew "clang-format"
 # Cross-platform make
 brew "cmake"
 # Color-highlighted diff(1) output
@@ -56,6 +58,8 @@ brew "hub"
 brew "imagemagick"
 # NaCl networking and cryptography library
 brew "libsodium"
+# Next-gen compiler infrastructure
+brew "llvm"
 # Utility for directing compilation
 brew "make"
 # Terminal-based visual file manager

@@ -103,7 +103,6 @@ brew "yarn"
 # Tracks most-used directories to make cd smarter
 brew "z"
 cask "alfred"
-cask "anaconda"
 cask "beardedspice"
 cask "day-o"
 cask "docker"

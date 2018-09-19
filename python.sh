@@ -11,6 +11,8 @@ function cw() {
   w $(basename "$@")
 }
 function w() {
+  # Activates the virtualenv which is particular to this directory, either the
+  # pipenv one or the one named like this dir
   local CURRENT_DIR=$(pwd | xargs basename)
   if [ ! -f "$CURRENT_DIR"/Pipfile ] && command_exists pipenv; then
     pipenv shell
@@ -19,6 +21,10 @@ function w() {
   else
     echo 'Neither pipenv nor virtualenvwrapper are installed'
   fi
+}
+function auh() {
+  # Shorthand for upgrading to the newest revision
+  PYTHONPATH=. alembic upgrade head
 }
 
 # IPython launch

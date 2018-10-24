@@ -8,6 +8,15 @@ function gpsu {
   BRANCH=`git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'`
   git push --set-upstream origin "$BRANCH" "$@"
 }
+function gpr {
+  # Push changes and create a pr
+  if ! command_exists hub; then
+    echo "Cannot find hub! Install hub or add it to PATH"
+    return 1
+  fi
+  gpsu &&
+  hub pull-request
+}
 function ga {
   git add "$@"
 }
@@ -124,7 +133,6 @@ function gcan {
   git commit --amend --no-edit "$@"
 }
 function refetch_submodule {
-  set -e
   git submodule sync
   git submodule update --init
 }

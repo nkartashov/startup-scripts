@@ -22,6 +22,13 @@ function w() {
     echo 'Neither pipenv nor virtualenvwrapper are installed'
   fi
 }
+function mkvenv() {
+  local CURRENT_DIR=$(pwd | xargs basename)
+  mkvirtualenv "$CURRENT_DIR"
+}
+function a() {
+  PYTHONPATH=. alembic "$@"
+}
 function auh() {
   # Shorthand for upgrading to the newest revision
   PYTHONPATH=. alembic upgrade head

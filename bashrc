@@ -1,22 +1,10 @@
 echo "Sourcing .bashrc"
 START_SCRIPTS=~/startup-scripts
-function include {
-  if [ -f "$1" ] ; then
-    source "$1" && echo "Sourced $1"
-  else
-    echo "$1 doesn't exist"
-  fi
-}
-function command_exists {
-  type "$1" &> /dev/null ;
-}
-# But env goes even firster!
+# Util, env and path goes even first!
+source "$START_SCRIPTS"/util.sh
 include "$START_SCRIPTS"/env.sh
-# But env goes even firster!
-
-# Path always goes first
 include "$START_SCRIPTS"/path.sh
-# Path always goes first
+# Util, env and path always goes first
 
 include "$START_SCRIPTS"/alias.sh
 include "$START_SCRIPTS"/python.sh

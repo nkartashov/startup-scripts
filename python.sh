@@ -1,3 +1,4 @@
+#!/bin/bash
 alias py="pypy"
 alias py3="python3"
 function ppy() {
@@ -7,20 +8,40 @@ function pitr() {
   pip install -r test_requirements.txt "$@"
 }
 function cw() {
-  cd "$@"
-  w $(basename "$@")
+  cd "$@" || return
+  w "$(basename "$@")"
 }
 function w() {
   # Activates the virtualenv which is particular to this directory, either the
   # pipenv one or the one named like this dir
-  local CURRENT_DIR=$(pwd | xargs basename)
-  if [ ! -f "$CURRENT_DIR"/Pipfile ] && command_exists pipenv; then
-    pipenv shell
-  elif command_exists workon; then
-    workon "$CURRENT_DIR"
-  else
-    echo 'Neither pipenv nor virtualenvwrapper are installed'
-  fi
+  local CURRENT_DIR=$(pwd)
+  while true; do
+    if [ -f "$CURRENT_DIR"/Pipfile ]; then
+      # We need to use pipenv
+      if command_exists pipenv; then
+        pipenv shell
+      else
+        echo 'Pipenv is not installed'
+      fi
+      break
+    elif [ -f "$CURRENT_DIR"/requirements.txt ]; then
+      # We need to use venv
+      if command_exists workon; then
+        workon "$(basename "$CURRENT_DIR")"
+      else
+        echo 'Virtualenvwrapper is not installed'
+      fi
+      break
+    else
+      if [ "$CURRENT_DIR" != "/" ]; then
+        # Go up a dir
+        CURRENT_DIR=$(dirname "$CURRENT_DIR")
+      else
+        echo 'Cannot find either requirements.txt or Pipfile'
+        break
+      fi
+    fi
+  done
 }
 function mkvenv() {
   local CURRENT_DIR=$(pwd | xargs basename)

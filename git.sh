@@ -4,8 +4,11 @@ function gpl {
 function gps {
   git push "$@"
 }
+function get_branch {
+  git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'
+}
 function gpsu {
-  BRANCH=`git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'`
+  BRANCH=$(get_branch)
   git push --set-upstream origin "$BRANCH" "$@"
 }
 function gpr {
@@ -39,13 +42,13 @@ function gch {
   git checkout "$@"
 }
 function fetch_rebased {
-  BRANCH=`git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'`
+  BRANCH=$(get_branch)
   git checkout master &&
   git branch -D "$BRANCH" &&
   git checkout "$BRANCH"
 }
 function checkout_master_and_run_command {
-  BRANCH=`git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'`
+  BRANCH=$(get_branch)
   git checkout master &&
   git pull &&
   git checkout "$BRANCH" &&
@@ -121,8 +124,8 @@ function git_to_ssh {
   local SSH_PREFIX='git@github.com:'
   local REPO=${CURRENT_URL#$HTTP_PREFIX}
   local FULL_GIT_URL="$SSH_PREFIX$REPO"
-  echo $CURRENT_URL '->' $FULL_GIT_URL
-  git remote set-url origin $FULL_GIT_URL
+  echo "$CURRENT_URL -> $FULL_GIT_URL"
+  git remote set-url origin "$FULL_GIT_URL"
 }
 
 function gca {

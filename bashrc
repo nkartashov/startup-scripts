@@ -1,3 +1,4 @@
+#!/bin/bash
 echo "Sourcing .bashrc"
 START_SCRIPTS=~/startup-scripts
 # Util, env and path goes even first!
@@ -12,7 +13,6 @@ include "$START_SCRIPTS"/docker.sh
 include "$START_SCRIPTS"/babylon.sh
 include "$START_SCRIPTS"/home.sh
 include "$START_SCRIPTS"/git.sh
-include "$START_SCRIPTS"/vars.sh
 include "$START_SCRIPTS"/prompt.sh
 include "$START_SCRIPTS"/title.sh
 include "$START_SCRIPTS"/history.sh

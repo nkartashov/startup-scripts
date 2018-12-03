@@ -1,5 +1,5 @@
 function lookup_docker_id {
-  echo $(docker ps | tail +2 | head -"$1" | tail -1 | cut -f1 -d' ')
+  echo "$(docker ps | tail +2 | head -"$1" | tail -1 | cut -f1 -d' ')"
 }
 function dkillall {
   docker ps -q | xargs docker kill

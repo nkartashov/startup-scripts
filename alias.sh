@@ -1,7 +1,7 @@
 # Moving around
 if [ -z "$WORK_PC" ]
 then
-  WORK_DIR="~/work"
+  WORK_DIR="$HOME/work"
   alias cdcpp="cd $WORK_DIR/cpp"
   alias cdunix="cd $WORK_DIR/unix"
   alias cdja="cd $WORK_DIR/java"
@@ -45,15 +45,15 @@ alias vus='vu; vs'
 
 # Short Ruby commands
 function bx {
-  bundler exec $@
+  bundler exec "$@"
 }
 
 function bxr {
-  bundler exec rspec $@
+  bundler exec rspec "$@"
 }
 
 function brake {
-  bundler exec rake $@
+  bundler exec rake "$@"
 }
 
 # Key utils
@@ -90,7 +90,7 @@ function jpp {
 }
 
 function jtb {
-  git checkout -b $(tr '[:space:]' '-' "$@")
+  git checkout -b "$(tr '[:space:]' '-' "$@")"
 }
 
 function untilfail {

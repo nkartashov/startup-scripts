@@ -139,3 +139,14 @@ function refetch_submodule {
   git submodule sync
   git submodule update --init
 }
+
+function get_unmerged {
+  git diff --name-only --diff-filter=U
+}
+
+function edit_unmerged {
+  vim -p "$(get_unmerged)"
+}
+function add_unmerged {
+  git add "$(get_unmerged)"
+}

@@ -150,3 +150,10 @@ function edit_unmerged {
 function add_unmerged {
   git add "$(get_unmerged)"
 }
+function get_added_files {
+  git diff --cached --name-only "$@"
+}
+function gaa {
+  # git add added
+  git add "$(get_added_files)"
+}

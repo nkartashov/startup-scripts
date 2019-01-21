@@ -101,5 +101,7 @@ function update_brewfile {
   brew bundle dump --global --describe --force
 }
 
+alias kc=kubectx
+
 # TEMPORARY
 alias cdold='cd /Volumes/Macintosh\ HD/Users/nikita_kartashov'

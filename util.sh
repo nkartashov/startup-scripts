@@ -5,6 +5,11 @@ function include {
     echo "$1 doesn't exist"
   fi
 }
+
 function command_exists {
   type "$1" &> /dev/null ;
+}
+
+function get_first_item_in_list_command {
+  head -2 | tail -1 | cut -f1 -d' '
 }

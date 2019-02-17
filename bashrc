@@ -9,6 +9,7 @@ include "$START_SCRIPTS"/path.sh
 
 include "$START_SCRIPTS"/alias.sh
 include "$START_SCRIPTS"/python.sh
+include "$START_SCRIPTS"/kubernetes.sh
 include "$START_SCRIPTS"/docker.sh
 include "$START_SCRIPTS"/babylon.sh
 include "$START_SCRIPTS"/home.sh

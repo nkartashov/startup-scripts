@@ -155,5 +155,5 @@ function get_added_files {
 }
 function gaa {
   # git add added
-  git add "$(get_added_files)"
+  get_added_files | xargs git add
 }

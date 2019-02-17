@@ -15,6 +15,9 @@ if [ -e "$ENV_VARIABLE_FILE" ]; then
 fi
 export EDITOR="vim"
 
+export NVM_DIR="$HOME/.nvm"
+include /usr/local/opt/nvm/nvm.sh
+
 export WORKON_HOME=~/envs
 export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3
 export VIRTUALENVWRAPPER_VIRTUALENV_ARGS='-p python3'

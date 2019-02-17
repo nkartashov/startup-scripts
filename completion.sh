@@ -3,6 +3,7 @@
 # sources /etc/bash.bashrc).
 include /usr/local/etc/bash_completion
 include /usr/local/etc/profile.d/z.sh
+include /usr/local/opt/nvm/etc/bash_completion
 
 if command_exists fasd; then
   eval "$(fasd --init auto)"

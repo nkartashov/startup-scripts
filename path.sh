@@ -8,6 +8,7 @@ function includeDirInPath {
 if [ -z "$WORK_PC" ]
 then
   includeDirInPath "$HOME/bin"
+  includeDirInPath "$HOME/.local/bin"
   includeDirInPath "/usr/local/Homebrew/bin"
   includeDirInPath "/usr/local/bin"
   includeDirInPath "$HOME/.local/bin"

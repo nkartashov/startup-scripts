@@ -4,6 +4,8 @@
 include /usr/local/etc/bash_completion
 include /usr/local/etc/profile.d/z.sh
 include /usr/local/opt/nvm/etc/bash_completion
+include /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.bash.inc
+include /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.bash.inc
 
 if command_exists fasd; then
   eval "$(fasd --init auto)"

@@ -7,7 +7,7 @@ function command_exists {
 }
 function link_if_not_linked {
   if [ ! -L ~/."$1" ]; then
-    ln -s "$RESULT_FOLDER"/"$1" ~/."$1"
+    ln -s "$RESULT_FOLDER/linked_files/$1" ~/".$1"
   fi
 }
 if [[ ! -d "$RESULT_FOLDER" ]]; then

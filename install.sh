@@ -8,6 +8,9 @@ function command_exists {
 function link_if_not_linked {
   if [ ! -L ~/."$1" ]; then
     ln -s "$RESULT_FOLDER/linked_files/$1" ~/".$1"
+    echo "Linked $RESULT_FOLDER/linked_files/$1 -> ~/.$1"
+  else
+    echo "~/.$1 already exists"
   fi
 }
 if [[ ! -d "$RESULT_FOLDER" ]]; then
@@ -23,6 +26,7 @@ if [[ ! -d "$SOLARIZED_DIR" ]]; then
 fi
 
 if ! command_exists brew; then
+  echo "Brew not found, installing..."
   /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 fi
 link_if_not_linked Brewfile

@@ -19,6 +19,7 @@ fi
 
 link_if_not_linked bashrc
 link_if_not_linked gitignore
+link_if_not_linked macos
 
 SOLARIZED_DIR=~/solarized
 if [[ ! -d "$SOLARIZED_DIR" ]]; then

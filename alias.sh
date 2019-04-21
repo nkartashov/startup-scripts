@@ -25,7 +25,7 @@ alias ll="ls -lh"
 
 # Vim
 function v {
-  vim "$@"
+  nvim "$@"
 }
 alias vrc="vim ~/.vimrc"
 alias vpr="vim ~/.bash_profile"

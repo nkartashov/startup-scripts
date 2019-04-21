@@ -157,3 +157,8 @@ function gaa {
   # git add added
   get_added_files | xargs git add
 }
+function setup_git {
+  git config --global core.editor "nvim"
+  git config --global user.name "Nikita Kartashov"
+  git config --global user.email "snailandmail@gmail.com"
+}

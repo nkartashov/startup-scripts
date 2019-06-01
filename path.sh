@@ -15,6 +15,4 @@ then
   includeDirInPath "/usr/local/opt/icu4c/bin"
   includeDirInPath "/usr/local/opt/icu4c/sbin"
   includeDirInPath "/usr/local/opt/fzf/bin"
-else
-  :;
 fi

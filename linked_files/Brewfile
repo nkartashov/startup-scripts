@@ -5,15 +5,20 @@ tap "homebrew/cask-fonts"
 tap "homebrew/cask-versions"
 tap "homebrew/core"
 tap "homebrew/services"
-cask "java"
+# Library for command-line editing
+brew "readline"
 # Automate deployment, configuration, and upgrading
 brew "ansible"
 # GNU multiple precision arithmetic library
 brew "gmp"
+# General-purpose data compression with high compression ratio
+brew "xz"
 # Interpreted, interactive, object-oriented programming language
 brew "python"
 # Official Amazon AWS command-line interface
 brew "awscli"
+# Bourne-Again SHell, a UNIX command interpreter
+brew "bash"
 # Programmable completion for Bash 3.2
 brew "bash-completion"
 # Clone of cat(1) with syntax highlighting and Git integration
@@ -66,6 +71,8 @@ brew "hugo"
 brew "imagemagick"
 # Lightweight and flexible command-line JSON processor
 brew "jq"
+# The Kubernetes package manager
+brew "kubernetes-helm"
 # NaCl networking and cryptography library
 brew "libsodium"
 # Utility for directing compilation
@@ -114,6 +121,8 @@ brew "tree"
 brew "vim", args: ["with-client-server", "with-lua", "with-luajit", "with-tcl"]
 # Tracks most-used directories to make cd smarter
 brew "z"
+# General-purpose lossless data-compression library
+brew "zlib"
 cask "alfred"
 cask "beardedspice"
 cask "day-o"
@@ -122,11 +131,14 @@ cask "electrum"
 cask "filezilla"
 cask "firefox"
 cask "font-fira-code"
+cask "google-chrome"
 cask "google-cloud-sdk"
 cask "google-drive"
 cask "gpg-suite"
+cask "hex-fiend"
 cask "iina"
 cask "iterm2"
+cask "java"
 cask "keepassxc"
 cask "openoffice"
 cask "seashore"

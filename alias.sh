@@ -70,6 +70,10 @@ function ssh_fingeprint {
   ssh-keygen -lf "$@"
 }
 
+function gssh {
+  gcloud compute ssh "$@"
+}
+
 function dus {
   du -sch .[!.]* * | gsort -rh
 }

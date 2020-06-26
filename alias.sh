@@ -107,3 +107,5 @@ function update_brewfile {
 
 # TEMPORARY
 alias cdold='cd /Volumes/Macintosh\ HD/Users/nikita_kartashov'
+
+alias free_hdd='df -h | grep "Macintosh HD" | tr -s " " " " | cut -d" " -f4'

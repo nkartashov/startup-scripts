@@ -1,22 +1,23 @@
-tap "d12frosted/emacs-plus"
 tap "homebrew/bundle"
 tap "homebrew/cask"
 tap "homebrew/cask-fonts"
 tap "homebrew/cask-versions"
 tap "homebrew/core"
 tap "homebrew/services"
-# Library for command-line editing
-brew "readline"
-# GNU multiple precision arithmetic library
-brew "gmp"
-# General-purpose data compression with high compression ratio
-brew "xz"
 # Bourne-Again SHell, a UNIX command interpreter
 brew "bash"
 # Programmable completion for Bash 3.2
 brew "bash-completion"
 # Clone of cat(1) with syntax highlighting and Git integration
 brew "bat"
+# General-purpose data compression with high compression ratio
+brew "xz"
+# Interpreted, interactive, object-oriented programming language
+brew "python@3.9"
+# Core application library for C
+brew "glib"
+# Cross-platform make
+brew "cmake"
 # Color-highlighted diff(1) output
 brew "colordiff"
 # GNU File, Shell, and Text utilities
@@ -27,30 +28,56 @@ brew "ctags"
 brew "direnv"
 # Pack, ship and run any application as a lightweight container
 brew "docker"
-# Create Docker hosts locally and on cloud providers
-brew "docker-machine"
 # Isolated development environments using Docker
 brew "docker-compose"
+# Create Docker hosts locally and on cloud providers
+brew "docker-machine"
 # CLI tool for quick access to files and directories
 brew "fasd"
 # Identify or delete duplicate files
 brew "fdupes"
+# GNU multiple precision arithmetic library
+brew "gmp"
+# GNU Ubiquitous Intelligent Language for Extensions
+brew "guile"
+# GNU Transport Layer Security (TLS) Library
+brew "gnutls"
+# Generate introspection data for GObject libraries
+brew "gobject-introspection"
+# OpenType text shaping engine
+brew "harfbuzz"
+# Subtitle renderer for the ASS/SSA subtitle format
+brew "libass"
+# NaCl networking and cryptography library
+brew "libsodium"
+# Play, record, convert, and stream audio and video
+brew "ffmpeg"
 # Collection of GNU find, xargs, and locate
 brew "findutils"
 # Command-line fuzzy finder written in Go
 brew "fzf"
+# Graphics library to dynamically manipulate images
+brew "gd"
+# Toolkit for image loading and pixel buffer manipulation
+brew "gdk-pixbuf"
 # Access GitHub's .gitignore boilerplates
 brew "gibo"
 # Distributed revision control system
 brew "git"
+# Git extension for versioning large files
+brew "git-lfs"
+# Framework for layout and rendering of i18n text
+brew "pango"
 # Graph visualization software from AT&T and Bell Labs
 brew "graphviz"
+# Cross-platform program for developing Haskell projects
+brew "haskell-stack"
 # User-friendly cURL replacement (command-line HTTP client)
 brew "httpie"
+# Add GitHub support to git on the command-line
+brew "hub"
 # Lightweight and flexible command-line JSON processor
 brew "jq"
-# NaCl networking and cryptography library
-brew "libsodium"
 # Utility for directing compilation
 brew "make"
 # Ambitious Vim-fork focused on extensibility and agility
@@ -65,11 +92,53 @@ brew "shellcheck"
 brew "the_silver_searcher"
 # Display directories as trees (with optional color/HTML output)
 brew "tree"
+# Tool for creating isolated virtual python environments
+brew "virtualenv", link: false
+# Python virtualenv extensions
+brew "virtualenvwrapper", link: false
+# Internet file retriever
+brew "wget"
 # Tracks most-used directories to make cd smarter
 brew "z"
 # General-purpose lossless data-compression library
 brew "zlib"
+# Application launcher and productivity software
 cask "alfred"
+# Memory training application
+cask "anki"
 cask "day-o"
-cask "docker"
+# Thin client for Bitcoin Cash
+cask "electron-cash"
+# Bitcoin thin client
+cask "electrum"
+# Web browser
+cask "firefox"
 cask "font-fira-code"
+cask "google-backup-and-sync"
+# Set of tools to manage resources and applications hosted on Google Cloud
+cask "google-cloud-sdk"
+# Client for the Google Drive storage service
+cask "google-drive"
+# Free and open-source media player
+cask "iina"
+cask "microsoft-remote-desktop-beta"
+# Cloud gaming platform
+cask "nvidia-geforce-now"
+# Screen capture tool with mark up and sharing features
+cask "skitch"
+# Video chat, voice call and instant messaging application
+cask "skype"
+# Video game digital distribution service
+cask "steam"
+# Messaging app with a focus on speed and security
+cask "telegram"
+# Open-source BitTorrent client
+cask "transmission"
+# Free and open-source OpenVPN client
+cask "tunnelblick"
+# Open-source code editor
+cask "visual-studio-code"
+# Desktop client for WhatsApp
+cask "whatsapp"
+# Video communication and virtual meeting platform
+cask "zoom"

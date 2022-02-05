@@ -24,7 +24,7 @@ link_if_not_linked iterm_shell_integration
 
 SOLARIZED_DIR=~/solarized
 if [[ ! -d "$SOLARIZED_DIR" ]]; then
-  git clone git@github.com:altercation/solarized.git "$SOLARIZED_DIR"
+  git clone https://github.com/altercation/solarized.git "$SOLARIZED_DIR"
 fi
 
 if ! command_exists brew; then

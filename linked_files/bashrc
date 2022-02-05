@@ -11,6 +11,7 @@ include "$START_SCRIPTS"/alias.sh
 include "$START_SCRIPTS"/python.sh
 include "$START_SCRIPTS"/kubernetes.sh
 include "$START_SCRIPTS"/docker.sh
+include "$START_SCRIPTS"/google.sh
 include "$START_SCRIPTS"/home.sh
 include "$START_SCRIPTS"/git.sh
 include "$START_SCRIPTS"/prompt.sh

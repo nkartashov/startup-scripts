@@ -105,7 +105,18 @@ function update_brewfile {
   brew bundle dump --global --describe --force
 }
 
+function whats_my_ip {
+  ipconfig getifaddr en0 
+}
+
 # TEMPORARY
 alias cdold='cd /Volumes/Macintosh\ HD/Users/nikita_kartashov'
 
 alias free_hdd='df -h | grep "Macintosh HD" | tr -s " " " " | cut -d" " -f4'
+
+function forward_port {
+  local HOST="$1"
+  local PORT="$2"
+  echo "Forwarding port ${PORT} to ${HOST}"
+  ssh -o ServerAliveInterval=10 -L "${PORT}":127.0.0.1:"${PORT}" "${HOST}" 
+}

@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 alias py="pypy"
 alias py3="python3"
 function ppy() {

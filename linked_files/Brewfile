@@ -121,6 +121,8 @@ cask "google-cloud-sdk"
 cask "google-drive"
 # Free and open-source media player
 cask "iina"
+# Terminal emulator as alternative to Apple's Terminal app
+cask "iterm2"
 cask "microsoft-remote-desktop-beta"
 # Cloud gaming platform
 cask "nvidia-geforce-now"
@@ -140,5 +142,3 @@ cask "tunnelblick"
 cask "visual-studio-code"
 # Desktop client for WhatsApp
 cask "whatsapp"
-# Video communication and virtual meeting platform
-cask "zoom"

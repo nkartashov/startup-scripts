@@ -1,5 +1,5 @@
-#!/bin/bash
-echo "Sourcing .bashrc"
+#!/bin/sh
+echo "Sourcing .rc"
 START_SCRIPTS=~/startup-scripts
 # Util, env and path goes even first!
 source "$START_SCRIPTS"/util.sh
@@ -14,7 +14,11 @@ include "$START_SCRIPTS"/docker.sh
 include "$START_SCRIPTS"/google.sh
 include "$START_SCRIPTS"/home.sh
 include "$START_SCRIPTS"/git.sh
-include "$START_SCRIPTS"/prompt.sh
+if is_bash; then
+    include "$START_SCRIPTS"/bash_prompt.sh
+elif is_zsh; then
+    include "$START_SCRIPTS"/zsh_prompt.sh
+fi
 include "$START_SCRIPTS"/title.sh
 include "$START_SCRIPTS"/history.sh
 include "$START_SCRIPTS"/completion.sh

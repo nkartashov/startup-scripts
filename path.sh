@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 function includeDirInPath {
   if [ -d "$1" ] ; then
     PATH="$1:$PATH"

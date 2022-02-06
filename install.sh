@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 RESULT_FOLDER=~/startup-scripts
 set -e
@@ -19,7 +19,6 @@ fi
 
 link_if_not_linked bashrc
 link_if_not_linked gitignore
-link_if_not_linked macos
 link_if_not_linked iterm_shell_integration
 
 SOLARIZED_DIR=~/solarized
@@ -32,3 +31,6 @@ if ! command_exists brew; then
   /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 fi
 link_if_not_linked Brewfile
+
+# Apply mac os settings changes.
+./"$RESULT_FODLER"/macos

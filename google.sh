@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 WORKSTATION_HOST=nkartashov.lon.corp.google.com
 function forward_workstation_port {

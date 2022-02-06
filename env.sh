@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 ENV_FILE=~/.bash_scripts_env
 if [ -e "$ENV_FILE" ]; then

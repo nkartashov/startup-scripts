@@ -28,7 +28,7 @@ fi
 
 if ! command_exists brew; then
   echo "Brew not found, installing..."
-  /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 fi
 link_if_not_linked Brewfile
 

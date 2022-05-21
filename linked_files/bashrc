@@ -3,8 +3,8 @@ echo "Sourcing .rc"
 START_SCRIPTS=~/startup-scripts
 # Util, env and path goes even first!
 source "$START_SCRIPTS"/util.sh
-include "$START_SCRIPTS"/env.sh
 include "$START_SCRIPTS"/path.sh
+include "$START_SCRIPTS"/env.sh
 # Util, env and path always goes first
 
 include "$START_SCRIPTS"/alias.sh

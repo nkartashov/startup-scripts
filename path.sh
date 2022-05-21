@@ -10,6 +10,7 @@ then
   includeDirInPath "$HOME/bin"
   includeDirInPath "$HOME/.local/bin"
   includeDirInPath "/usr/local/Homebrew/bin"
+  includeDirInPath "/opt/homebrew/bin"
   includeDirInPath "/usr/local/bin"
   includeDirInPath "$HOME/.local/bin"
   includeDirInPath "/usr/local/opt/icu4c/bin"

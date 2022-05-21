@@ -114,7 +114,6 @@ cask "electrum"
 # Web browser
 cask "firefox"
 cask "font-fira-code"
-cask "google-backup-and-sync"
 # Set of tools to manage resources and applications hosted on Google Cloud
 cask "google-cloud-sdk"
 # Client for the Google Drive storage service
@@ -123,7 +122,6 @@ cask "google-drive"
 cask "iina"
 # Terminal emulator as alternative to Apple's Terminal app
 cask "iterm2"
-cask "microsoft-remote-desktop-beta"
 # Cloud gaming platform
 cask "nvidia-geforce-now"
 # Screen capture tool with mark up and sharing features

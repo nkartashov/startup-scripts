@@ -135,6 +135,9 @@ function gca {
 function gcan {
   git commit --amend --no-edit "$@"
 }
+function reset_author {
+  git commit --amend --reset-author --no-edit "$@"
+}
 function refetch_submodule {
   git submodule sync
   git submodule update --init

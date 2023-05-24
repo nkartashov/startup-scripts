@@ -120,3 +120,12 @@ function forward_port {
   echo "Forwarding port ${PORT} to ${HOST}"
   ssh -o ServerAliveInterval=10 -L "${PORT}":127.0.0.1:"${PORT}" "${HOST}" 
 }
+
+function find_heavy_git_commits() {
+  git rev-list --objects --all |
+    git cat-file --batch-check='%(objecttype) %(objectname) %(objectsize) %(rest)' |
+    sed -n 's/^blob //p' |
+    sort --numeric-sort --key=2 |
+    gcut -c 1-12,41- |
+    $(command -v gnumfmt || echo numfmt) --field=2 --to=iec-i --suffix=B --padding=7 --round=nearest
+}

@@ -20,6 +20,6 @@ include /usr/local/opt/nvm/nvm.sh
 
 export PYENV_ROOT=~/.pyenv
 export WORKON_HOME=~/envs
-export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3
+export VIRTUALENVWRAPPER_PYTHON=/opt/homebrew/bin/python3
 export VIRTUALENVWRAPPER_VIRTUALENV_ARGS='-p python3'
 source virtualenvwrapper.sh

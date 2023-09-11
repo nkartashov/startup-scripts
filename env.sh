@@ -15,9 +15,6 @@ if [ -e "$ENV_VARIABLE_FILE" ]; then
 fi
 export EDITOR="vim"
 
-export NVM_DIR="$HOME/.nvm"
-include /usr/local/opt/nvm/nvm.sh
-
 export PYENV_ROOT=~/.pyenv
 export WORKON_HOME=~/envs
 export VIRTUALENVWRAPPER_PYTHON=/opt/homebrew/bin/python3

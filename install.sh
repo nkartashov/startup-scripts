@@ -33,4 +33,4 @@ fi
 link_if_not_linked Brewfile
 
 # Apply mac os settings changes.
-./"$RESULT_FODLER"/macos
+./"$RESULT_FOLDER"/macos

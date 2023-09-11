@@ -46,20 +46,14 @@ brew "gnutls"
 brew "gobject-introspection"
 # OpenType text shaping engine
 brew "harfbuzz"
-# Subtitle renderer for the ASS/SSA subtitle format
-brew "libass"
 # NaCl networking and cryptography library
 brew "libsodium"
-# Play, record, convert, and stream audio and video
-brew "ffmpeg"
 # Collection of GNU find, xargs, and locate
 brew "findutils"
 # Command-line fuzzy finder written in Go
 brew "fzf"
 # Graphics library to dynamically manipulate images
 brew "gd"
-# Toolkit for image loading and pixel buffer manipulation
-brew "gdk-pixbuf"
 # Access GitHub's .gitignore boilerplates
 brew "gibo"
 # Distributed revision control system
@@ -68,10 +62,6 @@ brew "git"
 brew "git-lfs"
 # Framework for layout and rendering of i18n text
 brew "pango"
-# Graph visualization software from AT&T and Bell Labs
-brew "graphviz"
-# Cross-platform program for developing Haskell projects
-brew "haskell-stack"
 # User-friendly cURL replacement (command-line HTTP client)
 brew "httpie"
 # Add GitHub support to git on the command-line
@@ -80,8 +70,6 @@ brew "hub"
 brew "jq"
 # Utility for directing compilation
 brew "make"
-# Ambitious Vim-fork focused on extensibility and agility
-brew "neovim"
 # Python version management
 brew "pyenv"
 # Readline wrapper: adds readline support to tools that lack it
@@ -104,13 +92,7 @@ brew "z"
 brew "zlib"
 # Application launcher and productivity software
 cask "alfred"
-# Memory training application
-cask "anki"
 cask "day-o"
-# Thin client for Bitcoin Cash
-cask "electron-cash"
-# Bitcoin thin client
-cask "electrum"
 # Web browser
 cask "firefox"
 cask "font-fira-code"
@@ -118,25 +100,11 @@ cask "font-fira-code"
 cask "google-cloud-sdk"
 # Client for the Google Drive storage service
 cask "google-drive"
-# Free and open-source media player
-cask "iina"
 # Terminal emulator as alternative to Apple's Terminal app
 cask "iterm2"
-# Cloud gaming platform
-cask "nvidia-geforce-now"
-# Screen capture tool with mark up and sharing features
-cask "skitch"
-# Video chat, voice call and instant messaging application
-cask "skype"
-# Video game digital distribution service
-cask "steam"
-# Messaging app with a focus on speed and security
-cask "telegram"
-# Open-source BitTorrent client
-cask "transmission"
 # Free and open-source OpenVPN client
 cask "tunnelblick"
 # Open-source code editor
 cask "visual-studio-code"
-# Desktop client for WhatsApp
-cask "whatsapp"
+
+

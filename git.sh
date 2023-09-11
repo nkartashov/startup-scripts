@@ -69,6 +69,9 @@ function gsh {
 function gst {
   git stash -u
 }
+function gstp {
+  git stash push -u -- "$@"
+}
 function gsta {
   git stash apply "$@"
 }
@@ -160,8 +163,14 @@ function gaa {
   # git add added
   get_added_files | xargs git add
 }
-function setup_git {
-  git config --global core.editor "nvim"
-  git config --global user.name "Nikita Kartashov"
+function setup_personal_git {
+  git config --global core.editor "vim"
+  git config --global user.name "Nick Kartashov"
   git config --global user.email "snailandmail@gmail.com"
+}
+
+function rac {
+  local COMMAND="GIT_EDITOR=true $(git status | grep -o 'git \b.*\b --continue')"
+  git status | grep 'both modified:' | awk '{print $NF}' | xargs git add
+  eval $COMMAND
 }

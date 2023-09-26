@@ -219,9 +219,9 @@ function delete_merged_branches() {
   : '
   - `<(...)` is process substitution that allows the output of a command to be treated as a file.
   - `gh pr list --author nkartashov --state closed | cut -f3 | sort` gets the list of branches from your closed PRs, extracts the branch names, and sorts them.
-  - `git branch | tr -d " *" | sort` lists the local branches, removes the leading spaces and asterisk (which indicates the current branch), and sorts the output.
+  - `git branch --merged | tr -d " *" | sort` lists the local branches, removes the leading spaces and asterisk (which indicates the current branch), and sorts the output.
   - `comm -12` compares the two sorted lists and outputs only the lines that appear in both (i.e., the branches that exist both locally and in the list of closed PRs).
   - `xargs -n 1 -p git branch -d` prompts you for confirmation and attempts to delete each branch if confirmed.
   '
-  comm -12 <(gh pr list --author "$GITHUB_USER" --state closed | cut -f3 | sort) <(git branch | tr -d ' *' | sort) | xargs -n 1 -p git branch -d
+  comm -12 <(gh pr list --author "$GITHUB_USER" --state closed | cut -f3 | sort) <(git branch --merged | tr -d ' *' | sort) | xargs -n 1 -p git branch -d
 }

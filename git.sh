@@ -1,3 +1,5 @@
+GITHUB_USER=nkartashov
+
 function gpl {
   git pull "$@"
 }
@@ -116,9 +118,6 @@ function list_conflicted {
   git diff --name-only --diff-filter=U
 }
 
-# Delete old branches which are already merged and keep master/develop/staging
-alias gbpurge='git branch --merged | grep -Ev "(\*|master|develop|staging)" | xargs -n 1 git branch -d'
-
 alias wip='git commit -m "wip"'
 
 function git_to_ssh {
@@ -173,4 +172,56 @@ function rac {
   local COMMAND="GIT_EDITOR=true $(git status | grep -o 'git \b.*\b --continue')"
   git status | grep 'both modified:' | awk '{print $NF}' | xargs git add
   eval $COMMAND
+}
+
+convert_seconds() {
+    local total_seconds=$1
+    local output=""
+
+    local years=$((total_seconds / 31536000))
+    if (( years > 0 )); then
+        output="${output}${years}y"
+    fi
+
+    local remainder=$((total_seconds % 31536000))
+    local months=$((remainder / 2592000))
+    if (( months > 0 )); then
+        output="${output}${months}M"
+    fi
+
+    remainder=$((remainder % 2592000))
+    local days=$((remainder / 86400))
+    if (( days > 0 )); then
+        output="${output}${days}d"
+    fi
+
+    remainder=$((remainder % 86400))
+    local hours=$((remainder / 3600))
+    if (( hours > 0 )); then
+        output="${output}${hours}h"
+    fi
+
+    remainder=$((remainder % 3600))
+    local minutes=$((remainder / 60))
+    if (( minutes > 0 )); then
+        output="${output}${minutes}m"
+    fi
+
+    local seconds=$((remainder % 60))
+    if (( seconds > 0 )); then
+        output="${output}${seconds}s"
+    fi
+
+    echo "$output"
+}
+
+function delete_merged_branches() {
+  : '
+  - `<(...)` is process substitution that allows the output of a command to be treated as a file.
+  - `gh pr list --author nkartashov --state closed | cut -f3 | sort` gets the list of branches from your closed PRs, extracts the branch names, and sorts them.
+  - `git branch | tr -d " *" | sort` lists the local branches, removes the leading spaces and asterisk (which indicates the current branch), and sorts the output.
+  - `comm -12` compares the two sorted lists and outputs only the lines that appear in both (i.e., the branches that exist both locally and in the list of closed PRs).
+  - `xargs -n 1 -p git branch -d` prompts you for confirmation and attempts to delete each branch if confirmed.
+  '
+  comm -12 <(gh pr list --author "$GITHUB_USER" --state closed | cut -f3 | sort) <(git branch | tr -d ' *' | sort) | xargs -n 1 -p git branch -d
 }

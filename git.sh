@@ -234,3 +234,7 @@ function delete_merged_branches() {
       echo "$output" | grep 'Deleted branch'
   done
 }
+
+function restore_to_master() {
+  git checkout origin/master "$@"
+}

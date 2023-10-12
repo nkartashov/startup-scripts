@@ -1,3 +1,5 @@
+export DOCKER_DEFAULT_PLATFORM=linux/amd64
+
 function lookup_docker_id {
   echo "$(docker ps | tail +2 | head -"$1" | tail -1 | cut -f1 -d' ')"
 }

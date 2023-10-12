@@ -216,12 +216,21 @@ convert_seconds() {
 }
 
 function delete_merged_branches() {
-  : '
-  - `<(...)` is process substitution that allows the output of a command to be treated as a file.
-  - `gh pr list --author nkartashov --state closed | cut -f3 | sort` gets the list of branches from your closed PRs, extracts the branch names, and sorts them.
-  - `git branch --merged | tr -d " *" | sort` lists the local branches, removes the leading spaces and asterisk (which indicates the current branch), and sorts the output.
-  - `comm -12` compares the two sorted lists and outputs only the lines that appear in both (i.e., the branches that exist both locally and in the list of closed PRs).
-  - `xargs -n 1 -p git branch -d` prompts you for confirmation and attempts to delete each branch if confirmed.
-  '
-  comm -12 <(gh pr list --author "$GITHUB_USER" --state closed | cut -f3 | sort) <(git branch --merged | tr -d ' *' | sort) | xargs -n 1 -p git branch -d
+    # Get the list of branches from closed PRs
+  closed_pr_branches=$(gh pr list --author "$GITHUB_USER" --state closed | cut -f3 | sort)
+
+  # Get the list of local branches
+  local_branches=$(git branch | tr -d ' *' | sort)
+
+  # Find the common branches between the two lists
+  common_branches=$(comm -12 <(echo "$closed_pr_branches") <(echo "$local_branches"))
+
+
+  # Process each common branch
+  echo "$common_branches" | while read -r branch; do
+      # Attempt to delete the branch, passing "yes" to any prompts
+      output=$(yes | git branch -d "$branch" 2>&1)
+      # Filter only the deletion confirmation messages
+      echo "$output" | grep 'Deleted branch'
+  done
 }

@@ -12,15 +12,12 @@ function get_branch {
 function gpsu {
   BRANCH=$(get_branch)
   git push --set-upstream origin "$BRANCH" "$@"
-}
-function gpr {
-  # Push changes and create a pr
-  if ! command_exists hub; then
-    echo "Cannot find hub! Install hub or add it to PATH"
-    return 1
-  fi
-  gpsu &&
-  hub pull-request
+
+  FIRST_COMMIT_MESSAGE=$(git log master.."$BRANCH" --format="%s%n%n%b" | head -n 1)
+  FIRST_COMMIT_BODY=$(git log master.."$BRANCH" --format="%s%n%n%b" | tail -n +2)
+
+  PR_URL=$(gh pr create --base master --head "$BRANCH" --title "$FIRST_COMMIT_MESSAGE" --body "$FIRST_COMMIT_BODY")
+  open "$PR_URL"
 }
 function ga {
   git add "$@"

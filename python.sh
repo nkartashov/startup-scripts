@@ -1,4 +1,5 @@
 #!/bin/sh
+alias pt="pytest"
 alias py="pypy"
 alias py3="python3"
 function ppy() {

@@ -213,21 +213,27 @@ convert_seconds() {
 }
 
 function delete_merged_branches() {
-    # Get the list of branches from closed PRs
+  # Get the list of branches from closed PRs
   closed_pr_branches=$(gh pr list --author "$GITHUB_USER" --state closed | cut -f3 | sort)
 
   # Get the list of local branches
   local_branches=$(git branch | tr -d ' *' | sort)
 
-  # Find the common branches between the two lists
-  common_branches=$(comm -12 <(echo "$closed_pr_branches") <(echo "$local_branches"))
+  # Filter closed PR branches that exist locally
+  pr_branches=$(comm -12 <(echo "$closed_pr_branches") <(echo "$local_branches"))
 
+  # Get branches fully merged into master, excluding master itself
+  fully_merged=$(git branch --merged master | sed 's/^[ *]*//' | grep -v '^master$' | sort)
+  merged_branches=$(comm -12 <(echo "$fully_merged") <(echo "$local_branches"))
 
-  # Process each common branch
-  echo "$common_branches" | while read -r branch; do
+  # Compute union of both sets
+  all_branches=$(echo -e "$pr_branches\n$merged_branches" | sort | uniq)
+
+  # Process each branch
+  echo "$all_branches" | while read -r branch; do
       # Attempt to delete the branch, passing "yes" to any prompts
       output=$(yes | git branch -d "$branch" 2>&1)
-      # Filter only the deletion confirmation messages
+      # Show deletion confirmation messages
       echo "$output" | grep 'Deleted branch'
   done
 }

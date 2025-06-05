@@ -59,3 +59,16 @@ function auh() {
 # IPython launch
 alias ipn='ipython notebook --profile solarized'
 alias jp='jupyter notebook'
+
+function pytest_run_modified() {
+  local files_to_test=()
+  while IFS= read -r file; do
+    if [[ "$file" == tests/*.py || "$(basename "$file")" == test_*.py ]]; then
+      files_to_test+=("$file")
+    fi
+  done < <(git status --porcelain | awk '{print $2}')
+
+  if [ ${#files_to_test[@]} -gt 0 ]; then
+    pytest "${files_to_test[@]}"
+  fi
+}

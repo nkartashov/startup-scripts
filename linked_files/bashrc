@@ -4,6 +4,7 @@ START_SCRIPTS=~/startup-scripts
 # Util, env and path goes even first!
 source "$START_SCRIPTS"/util.sh
 include "$START_SCRIPTS"/path.sh
+includeDirInPath "$START_SCRIPTS"/alias
 include "$START_SCRIPTS"/env.sh
 # Util, env and path always goes first
 

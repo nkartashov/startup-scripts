@@ -129,3 +129,7 @@ function find_heavy_git_commits() {
     gcut -c 1-12,41- |
     $(command -v gnumfmt || echo numfmt) --field=2 --to=iec-i --suffix=B --padding=7 --round=nearest
 }
+
+function uuid() {
+  python -c "import uuid; print(uuid.uuid4())"
+}

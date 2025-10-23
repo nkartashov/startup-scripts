@@ -9,9 +9,14 @@ function gps {
 function get_branch {
   git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'
 }
-function gpsu {
+
+function push_branch {
   BRANCH=$(get_branch)
   git push --set-upstream origin "$BRANCH" "$@"
+}
+
+function gpsu {
+  push_branch
 
   FIRST_COMMIT_MESSAGE=$(git log master.."$BRANCH" --format="%s%n%n%b" | head -n 1)
   FIRST_COMMIT_BODY=$(git log master.."$BRANCH" --format="%s%n%n%b" | tail -n +2)

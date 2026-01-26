@@ -122,7 +122,7 @@ function list_conflicted {
 
 alias wip='git commit -m "wip"'
 
-function git_to_ssh {
+function switch_git_remote_to_ssh {
   local CURRENT_URL=$(git remote -v | head -1 | cut -f2 | cut -d' ' -f1)
   local HTTP_PREFIX='https://github.com/'
   local SSH_PREFIX='git@github.com:'

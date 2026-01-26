@@ -11,19 +11,38 @@ function get_branch {
 }
 
 function push_branch {
-  BRANCH=$(get_branch)
+  BRANCH="$(get_branch)" || return 1
   git push --set-upstream origin "$BRANCH" "$@"
 }
 
 function gpsu {
-  push_branch
+  push_branch "$@" || return 1
 
-  FIRST_COMMIT_MESSAGE=$(git log master.."$BRANCH" --format="%s%n%n%b" | head -n 1)
-  FIRST_COMMIT_BODY=$(git log master.."$BRANCH" --format="%s%n%n%b" | tail -n +2)
+  local BRANCH BASE RANGE TITLE BODY PR_URL
+  BRANCH="$(get_branch)" || return 1
 
-  PR_URL=$(gh pr create --base master --head "$BRANCH" --title "$FIRST_COMMIT_MESSAGE" --body "$FIRST_COMMIT_BODY")
+  BASE="$(git symbolic-ref --quiet --short refs/remotes/origin/HEAD)" || return 1
+  BASE="${BASE#origin/}"
+
+  RANGE="origin/${BASE}..${BRANCH}"
+
+  TITLE="$(git log --reverse --format=%s "${RANGE}" | head -n 1)"
+  BODY="$(git log --reverse --format='%s%n%n%b' "${RANGE}")"
+
+  if [[ -z "${TITLE//[[:space:]]/}" ]]; then
+    echo "gpsu: couldn't derive PR title from ${RANGE} (no commits?)"
+    return 1
+  fi
+
+  if [[ -z "${BODY//[[:space:]]/}" ]]; then
+    echo "gpsu: couldn't derive PR body from ${RANGE} (no commits?)"
+    return 1
+  fi
+
+  PR_URL="$(gh pr create --draft --base "$BASE" --head "$BRANCH" --title "$TITLE" --body "$BODY")" || return 1
   open "$PR_URL"
 }
+
 function ga {
   git add "$@"
 }

@@ -24,8 +24,4 @@ precmd() {
   fi
 }
 
-function venv_prompt {
-  [[ -n "$VIRTUAL_ENV" ]] && echo "($(basename $VIRTUAL_ENV)) "
-}
-
-PROMPT='$(venv_prompt)${git_info}%~$ '
+PROMPT='${git_info}%~$ '

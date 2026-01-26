@@ -20,8 +20,7 @@ elif is_zsh; then
 fi
 include "$START_SCRIPTS"/title.sh
 include "$START_SCRIPTS"/history.sh
-include "$START_SCRIPTS"/openai.sh
-. "$HOME/.cargo/env"
+include "$START_SCRIPTS"/work.sh
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
